@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>OKLab-Picker</title>
+
+  <link rel="icon" href="./img-svg/cool-emoji.png" />
+  <link rel="stylesheet" href="./main.css" />
+  <link rel="stylesheet" href="./range.css" />
+  <link rel="stylesheet" href="./dark-theme.css" />
+
+  <script type="module" defer src="./main.js"></script>
+</head>
+<body>
+  <header class="header">
+    <section class="header_section section container">
+      <h1 class="header_title">
+        OKLab-Picker!
+        <img 
+          src="./img-svg/cool-emoji.png"
+          alt="" 
+          class="header_title-img"
+          width="36"
+          height="36"
+        />
+      </h1>
+      <button data-js-theme-switch
+        class="themeSwitch"
+      >
+        <img data-js-moon-icon width="32px" height="32px" class="moon-icon  hidden" src="./img-svg/moon-icon.svg" alt="moon-icon" />
+        <img data-js-sun-icon  width="32px" height="32px" class="sun-icon  visible" src="./img-svg/sun-icon.svg"  alt="sun-icon"  />
+        <img data-js-rays-icon width="62px" height="62px" class="rays-icon visible" src="./img-svg/rays-icon.svg" alt="rays-icon" />
+      </button>
+    </section>
+  </header>
+  <span data-js-error-message class="error hidden"></span>
+  <main class="main">
+    <section class="main_section section container">
+      <div class="main_result">
+        <div data-js-color-preview
+          class="main_color-preview"
+          style="background-color: oklab(0.5 0 0);"
+        ></div>
+        <div class="HEX-input">
+          <input data-js-color-hex-form
+            readonly
+            type="text"
+            value="#636363"
+            minlength="4"
+            maxlength="7"
+            name="hex"
+            class="main_input input main_color-text-form"
+          />
+          <p class="copy-paste">
+            <button data-js-button-paste
+              class="button-paste"
+              title="paste"
+            >
+              <img width="28px" height="28px" class="paste-icon" src="./img-svg/paste-icon.svg" alt="paste-icon" />
+            </button>
+            <button data-js-button-copy
+              class="button-copy"
+              title="copy"
+              name="hex"
+            >
+              <img data-js-button-copy-icon width="32px" height="32px" class="copy-icon visible" src="./img-svg/copy-icon.svg" alt="copy-icon" />
+              <img data-js-button-copy-done-icon width="32px" height="32px" class="copy-icon-done hidden" src="./img-svg/copy-icon-done.svg" alt="copy-icon-done" />
+            </button>
+          </p>
+        </div>
+        <div class="OKLab-input">
+          <input data-js-color-oklab-form
+            class="main_input input"
+            type="text"
+            name="oklab"
+            value="0.5 0 0"
+          />
+        </div>
+      </div>
+      <div class="main_menu menu">
+        <div class="menu_element">
+          <label for="lightness-value" class="menu_label">lightness:</label>
+          <p class="menu_counter">
+            <button data-js-button-minus
+              title="decrement"
+              class="menu_counter-button"
+              name="l"
+              data-min="0"
+              data-max="1"
+            >-</button>
+            <input data-js-l-counter
+              type="number" 
+              class="menu_input input"
+              id="lightness-value"
+              name="l"
+              value="0.5"
+              min="0"
+              max="1"
+            />
+            <button data-js-button-plus
+              title="increment"
+              class="menu_counter-button"
+              name="l"
+              data-min="0"
+              data-max="1"
+            >+</button>
+          </p>
+          <input data-js-l-range
+            type="range"
+            class="menu_range range"
+            id="lightness"
+            value="0.5"
+            name="l"
+            min="0"
+            max="1"
+            step="0.01"
+          />
+        </div>
+        <div class="menu_element">
+          <label for="a-channel-value" class="menu_label">a-channel:</label>
+          <p class="menu_counter">
+            <button data-js-button-minus
+              title="decrement"
+              class="menu_counter-button"
+              name="a"
+              data-min="-0.25"
+              data-max="0.25"
+            >-</button>
+            <input data-js-a-counter
+              type="number" 
+              class="menu_input input"
+              id="a-channel-value"
+              value="0"
+              name="a"
+              min="-0.25"
+              max="0.25"
+            />
+            <button data-js-button-plus
+              title="increment"
+              class="menu_counter-button"
+              name="a"
+              data-min="-0.25"
+              data-max="0.25"
+            >+</button>
+          </p>
+          <input data-js-a-range
+            type="range"
+            class="menu_range range"
+            id="a-channel"
+            value="0"
+            name="a"
+            min="-0.25"
+            max="0.25"
+            step="0.001"
+          />
+        </div>
+        <div class="menu_element">
+          <label for="b-channel-value" class="menu_label">b-channel:</label>
+          <p class="menu_counter">
+            <button data-js-button-minus
+              title="decrement"
+              class="menu_counter-button"
+              name="b"
+              data-min="-0.25"
+              data-max="0.25"
+            >-</button>
+            <input data-js-b-counter
+              type="number" 
+              class="menu_input input"
+              id="b-channel-value"
+              value="0"
+              name="b"
+              min="-0.25"
+              max="0.25"
+            />
+            <button data-js-button-plus
+              title="increment"
+              class="menu_counter-button"
+              name="b"
+              data-min="-0.25"
+              data-max="0.25"
+            >+</button>
+          </p>
+          <input data-js-b-range
+            type="range"
+            class="menu_range range"
+            id="b-channel"
+            value="0"
+            name="b"
+            min="-0.25"
+            max="0.25"
+            step="0.001"
+          />
+        </div>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

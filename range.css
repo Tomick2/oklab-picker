@@ -1,0 +1,115 @@
+body {
+  --thumb-size: 30px 10px;
+}
+
+#lightness {
+  -webkit-appearance: none;
+  appearance: none;
+
+  background: linear-gradient(
+    to right,
+    oklab(0% 0 0.25) 0%, 
+    oklab(100% 0 0.25) 100%
+  );
+}
+
+#lightness {
+  -moz-appearance: none;
+  appearance: none;
+
+  background: linear-gradient(
+    to right,
+    oklab(0 0 0) 0%,
+    oklab(1 0 0) 100%
+  );
+}
+
+#a-channel {
+  -webkit-appearance: none;
+  appearance: none;
+  
+  background: linear-gradient(
+    to right, 
+    oklab(0.5 -0.25 0) 0%,
+    oklab(0.5 0 0) 50%,
+    oklab(0.5 0.25 0) 100%
+  );
+}
+
+#a-channel {
+  -moz-appearance: none;
+  appearance: none;
+
+  background: linear-gradient(
+    to right,
+    oklab(0.5 -0.25 0) 0%,
+    oklab(0.5 0 0) 50%,
+    oklab(0.5 0.25 0) 100%
+  );
+}
+
+#b-channel {
+  -webkit-appearance: none;
+  appearance: none;
+  
+  background: linear-gradient(
+    to right,
+    oklab(0.5 0 -0.25) 0%,
+    oklab(0.5 0 0) 50%,
+    oklab(0.5 0 0.25) 100%
+  );
+}
+
+#b-channel {
+  -moz-appearance: none;
+  appearance: none;
+
+  background: linear-gradient(
+    to right,
+    oklab(0.5 0 -0.25) 0%,
+    oklab(0.5 0 0) 50%,
+    oklab(0.5 0 0.25) 100%
+  );
+}
+
+#lightness::-webkit-slider-thumb {
+  margin: -15px 0px;
+  padding: var(--thumb-size);
+  filter: hue-rotate(280deg) brightness(1.3);
+}
+
+#lightness::-moz-range-thumb {
+  margin: -15px 0px;
+  padding: var(--thumb-size);
+  filter: hue-rotate(280deg) brightness(1.3);
+}
+
+#a-channel::-webkit-slider-thumb {
+  margin: -15px 0px;
+  padding: var(--thumb-size);
+  filter: hue-rotate(280deg) brightness(1.3);
+}
+
+#a-channel::-moz-range-thumb {
+  margin: -15px 0px;
+  padding: var(--thumb-size);
+  filter: hue-rotate(280deg) brightness(1.3);
+}
+
+#b-channel::-webkit-slider-thumb {
+  margin: -15px 0px;
+  padding: var(--thumb-size);
+  filter: hue-rotate(280deg) brightness(1.3);
+}
+
+#b-channel::-moz-range-thumb {
+  margin: -15px 0px;
+  padding: var(--thumb-size);
+  filter: hue-rotate(280deg) brightness(1.3);
+}
+
+@media (max-width: 450px) {
+  body {
+    --thumb-size: 25px 5px;
+  }
+}
